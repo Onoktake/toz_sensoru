@@ -1,23 +1,23 @@
-int dustPin=A0;
-float dustVal=0; 
-int ledPower=12;
+int veriPini = A0; // Siyah kablonun (sensörün soldan 2. pini) bağlı olduğu pin
+float toz=0; //Gelen veriyi sakladığımız değişken
+int led=2; // Beyaz kablonun (sensörün soldan 3. pini) bağlı olduğu pin
 int delayTime=280;
 int delayTime2=40;
 float offTime=9680;
 
 void setup(){
-Serial.begin(9600);
-pinMode(ledPower,OUTPUT);
-pinMode(dustPin, INPUT);
+Serial.begin(9600); //Verileri okuyabilmek için seri portu başlatıyoruz.
+pinMode(led,OUTPUT);
+pinMode(veriPini, INPUT);
 }
  
 void loop(){
-// ledPower is any digital pin on the arduino connected to Pin 2 on the sensor
-digitalWrite(ledPower,LOW); 
+
+digitalWrite(led,LOW); 
 delayMicroseconds(delayTime);
-dustVal=analogRead(dustPin); 
+dustVal=analogRead(veriPini); 
 delayMicroseconds(delayTime2);
-digitalWrite(ledPower,HIGH); 
+digitalWrite(led,HIGH); 
 delayMicroseconds(offTime);
 delay(1000);
 if (dustVal>36.455)
