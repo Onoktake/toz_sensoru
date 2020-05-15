@@ -1,7 +1,7 @@
 int veriPini = A0; // Siyah kablonun (sensörün soldan 2. pini) bağlı olduğu pin
 float toz=0; //Gelen veriyi sakladığımız değişken
 int led=2; // Beyaz kablonun (sensörün soldan 3. pini) bağlı olduğu pin
-int delayTime=280;
+int delayTime=280; /sure
 int delayTime2=40;
 float offTime=9680;
 
